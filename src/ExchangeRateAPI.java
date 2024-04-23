@@ -1,10 +1,5 @@
 package src;
 
-import java.util.Map;
-
-public record ExchangeRateAPI( int USD, int EUR, double GBP,
-                               double JPY, double CHF, double HKD,
-                               double CAD, double AUD, double CNY,
-                               double BRL) {
+public record ExchangeRateAPI(String base_code, String target_code, double conversion_rate ) {
 
 }

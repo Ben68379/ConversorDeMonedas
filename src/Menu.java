@@ -2,8 +2,12 @@ package src;
 
 public class Menu {
     String mon = "";
+    String mon2 = "";
     public String getMon() {
         return mon;
+    }
+    public String getMon2() {
+        return mon2;
     }
     public void menu(){
 
@@ -21,35 +25,45 @@ public class Menu {
     public void seleccion(int teclado) {
         switch (teclado) {
             case 1:
-                this.mon = "USD";
+                if(mon.equals("")){
+                    this.mon = "USD";
+                }
+                else {
+                    this.mon2 = "USD";
+                }
                 break;
             case 2:
-                this.mon = "EUR";
+                if(mon.equals("")) {
+                    this.mon = "EUR";
+                }
+                else{
+                    this.mon2 = "EUR";
+                }
                 break;
-            case 3:
-                mon = "GBP";
-                break;
-            case 4:
-                mon = "JPY";
-                break;
-            case 5:
-                mon = "CHF";
-                break;
-            case 6:
-                mon = "HKD";
-                break;
-            case 7:
-                mon = "CAD";
-                break;
-            case 8:
-                mon = "AUD";
-                break;
-            case 9:
-                mon = "CNY";
-                break;
-            case 10:
-                mon = "BRL";
-                break;
+//            case 3:
+//                this.cont = "GBP";
+//                break;
+//            case 4:
+//                this.cont = "JPY";
+//                break;
+//            case 5:
+//                this.cont= "CHF";
+//                break;
+//            case 6:
+//                this.cont = "HKD";
+//                break;
+//            case 7:
+//                this.cont = "CAD";
+//                break;
+//            case 8:
+//                this.cont = "AUD";
+//                break;
+//            case 9:
+//                this.cont = "CNY";
+//                break;
+//            case 10:
+//                this.cont = "BRL";
+//                break;
             default:
                 System.out.println("error");
         }

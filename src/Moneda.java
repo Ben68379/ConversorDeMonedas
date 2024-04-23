@@ -1,23 +1,24 @@
 package src;
 
-public class Moneda {
-    private String moneda;
+public class Moneda { ;
     private double valor;
+    private String monedaOrigen;
+    private String monedaDestino;
 
-    public Moneda(String moneda, double valor){
-        this.moneda =  moneda;
-        this.valor = valor;
+    public double getValor() {
+        return valor;
     }
 
-    public String getMoneda() {
-        return moneda;
+    public Moneda(ExchangeRateAPI exchange){
+        this.valor =  exchange.conversion_rate();
+        this.monedaOrigen = exchange.base_code();
+        this.monedaDestino = exchange.target_code();
     }
 
     @Override
     public String toString() {
-        return "Moneda{" +
-                "moneda='" + moneda + '\'' +
-                ", valor=" + valor +
+        return "Moneda origen= " + monedaOrigen + " Moneda Destino= " +
+                monedaDestino + " Valor=" + valor +
                 '}';
     }
 }
