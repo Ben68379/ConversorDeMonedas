@@ -1,5 +1,5 @@
-package src;
-
+package com.aluracursosg6.conversordemonedas.Modelos;
+import com.aluracursosg6.conversordemonedas.APIs.ExchangeRateAPI;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -16,8 +16,6 @@ public class Busqueda{
         return valor;
     }
 
-    private String direccion = "https://v6.exchangerate-api.com/v6/0cbad85ec17d8d997464a74b/pair/";
-
 
     public void generaDireccion(String mon, String mon2) throws IOException, InterruptedException{
      Gson gson = new GsonBuilder()
@@ -25,6 +23,7 @@ public class Busqueda{
              .create();
         try {
             HttpClient client = HttpClient.newHttpClient();
+            String direccion = "https://v6.exchangerate-api.com/v6/0cbad85ec17d8d997464a74b/pair/";
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(direccion + mon + "/" + mon2))
                     .build();

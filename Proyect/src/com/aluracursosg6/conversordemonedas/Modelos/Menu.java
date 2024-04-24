@@ -1,29 +1,11 @@
-package src;
+package com.aluracursosg6.conversordemonedas.Modelos;
 
 public class Menu {
     private String mon = "";
     private String mon2 = "";
 
     public String getPrompt() {
-        return prompt;
-    }
-
-    public String getPrompt2() {
-        return prompt2;
-    }
-
-    public String getPrompt3() {
-        return prompt3;
-    }
-
-    public String getMon() {
-        return mon;
-    }
-    public String getMon2() {
-        return mon2;
-    }
-
-    private String prompt = ("""
+        return ("""
                 -------------------------------------------
                 Igresa la moneda de la que deseas convertir
                 
@@ -33,14 +15,27 @@ public class Menu {
                 4.Peso Colombiano(COP).
                 5.Dolar Estadounidense (USD).
                 """);
+    }
 
-    private String prompt2 = "Convertir a:";
-    private String prompt3 = "Cantidad a convertir";
+    public String getPrompt2() {
+        return "Convertir a:";
+    }
+
+    public String getPrompt3() {
+        return "Cantidad a convertir";
+    }
+
+    public String getMon() {
+        return mon;
+    }
+    public String getMon2() {
+        return mon2;
+    }
 
     public void seleccion(int teclado) {
         switch (teclado) {
             case 1:
-                if(mon.equals("")){
+                if(mon.isEmpty()){
                     this.mon = "ARS";
                 }
                 else {
@@ -48,7 +43,7 @@ public class Menu {
                 }
                 break;
             case 2:
-                if(mon.equals("")) {
+                if(mon.isEmpty()) {
                     this.mon = "BOB";
                 }
                 else{
@@ -56,7 +51,7 @@ public class Menu {
                 }
                 break;
             case 3:
-                if(mon.equals("")) {
+                if(mon.isEmpty()) {
                     this.mon = "BRL";
                 }
                 else{
@@ -64,7 +59,7 @@ public class Menu {
                 }
                 break;
             case 4:
-                if(mon.equals("")) {
+                if(mon.isEmpty()) {
                     this.mon = "COP";
                 }
                 else{
@@ -72,7 +67,7 @@ public class Menu {
                 }
                 break;
             case 5:
-                if(mon.equals("")) {
+                if(mon.isEmpty()) {
                     this.mon = "USD";
                 }
                 else{

@@ -1,9 +1,9 @@
-package src;
-
-public class Moneda { ;
-    private double valor;
-    private String monedaOrigen;
-    private String monedaDestino;
+package com.aluracursosg6.conversordemonedas.Modelos;
+import com.aluracursosg6.conversordemonedas.APIs.ExchangeRateAPI;
+public class Moneda {
+    private final double valor;
+    private final String monedaOrigen;
+    private final String monedaDestino;
 
     public double getValor() {
         return valor;

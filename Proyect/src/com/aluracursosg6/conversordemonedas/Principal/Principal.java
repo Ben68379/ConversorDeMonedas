@@ -1,5 +1,6 @@
-package src;
-
+package com.aluracursosg6.conversordemonedas.Principal;
+import com.aluracursosg6.conversordemonedas.Modelos.Menu;
+import com.aluracursosg6.conversordemonedas.Modelos.Busqueda;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -32,9 +33,7 @@ public class Principal {
             System.out.println(cantidad + " " + mon + " = "
                     + conversion + " " + mon2);
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
