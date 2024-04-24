@@ -11,3 +11,5 @@ y la opcion de salir.</li>
 <li>Hacer las excepciones en caso de errores.</li>
 
 <li>Crear imagenes y videos de demostracion de la aplicacion funcionando.</li>
+
+<img src="record1.gif">

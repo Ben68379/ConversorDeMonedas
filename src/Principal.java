@@ -4,17 +4,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
-
     public static void main(String[] args){
         var menu = new Menu();
-        String mon = "";
         double conversion;
-        menu.menu();
-        Busqueda bus = new Busqueda(mon);
+        double cantidad;
+        String mon;
+        String mon2;
+        System.out.println(menu.getPrompt());
+        Busqueda bus = new Busqueda();
         Scanner teclado = new Scanner(System.in);
 
         menu.seleccion(teclado.nextInt());
-        System.out.println("Ingresa la moenda destino");
+        System.out.println(menu.getPrompt2());
         teclado = new Scanner(System.in);
 
         menu.seleccion(teclado.nextInt());
@@ -22,14 +23,14 @@ public class Principal {
 
         try {
             bus.generaDireccion(menu.getMon(), menu.getMon2());
-            System.out.println("Cantidad a convertir");
+            mon = menu.getMon();
+            mon2 = menu.getMon2();
+            System.out.println(menu.getPrompt3());
             teclado = new Scanner(System.in);
-            conversion = teclado.nextDouble() * bus.getMoneda();
-            System.out.println(conversion);
-
-
-
-
+            cantidad = teclado.nextDouble();
+            conversion = cantidad * bus.getValor();
+            System.out.println(cantidad + " " + mon + " = "
+                    + conversion + " " + mon2);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
